@@ -1,0 +1,83 @@
+/* ETERNIOR - Catalog & Lab Configurator 
+   Developer: Arsić Development
+*/
+
+:root {
+    --gold: #d4af37;
+    --dark-bg: #0a0a0a;
+    --border: #222;
+}
+
+/* --- KATALOG HERO & FILTERS --- */
+.katalog-hero { padding: 140px 5% 40px; text-align: center; background: #0a0a0a; }
+.filters-container { display: flex; justify-content: center; gap: 10px; margin: 40px 0; }
+.filter-btn { background: transparent; border: 1px solid var(--border); color: #666; padding: 10px 20px; cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 0.8rem; }
+.filter-btn.active { border-color: var(--gold); color: var(--gold); }
+
+/* --- GRID --- */
+.katalog-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; padding: 0 5% 100px; max-width: 1400px; margin: 0 auto; 
+}
+
+/* --- KARTICA --- */
+.product-card { background: var(--dark-bg); border: 1px solid var(--border); cursor: pointer; transition: 0.4s; position: relative; }
+.product-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+.product-img { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; }
+.product-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+.badge { position: absolute; top: 15px; left: 15px; background: var(--gold); color: #000; padding: 5px 10px; font-weight: 700; font-size: 0.7rem; z-index: 5; }
+.product-info { padding: 25px; text-align: center; }
+.price { color: var(--gold); font-weight: 600; margin-bottom: 15px; display: block; }
+.add-to-cart-btn { width: 100%; background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 12px; cursor: pointer; transition: 0.3s; font-weight: 600; }
+.add-to-cart-btn:hover { background: var(--gold); color: #000; }
+
+/* --- MODAL SYSTEM --- */
+.modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); overflow-y: auto; backdrop-filter: blur(8px); }
+.modal-content { background: #0a0a0a; margin: 2% auto; width: 95%; max-width: 900px; border: 1px solid var(--border); position: relative; animation: slideUp 0.4s; }
+@keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.close-modal { position: absolute; right: 20px; top: 15px; font-size: 2rem; color: #fff; cursor: pointer; z-index: 100; }
+
+/* --- LAB LAYOUT (CUSTOM) --- */
+.lab-grid-layout { display: grid; grid-template-columns: 1fr 1.2fr; }
+@media (max-width: 768px) { .lab-grid-layout { grid-template-columns: 1fr; } }
+.lab-preview-side { background: #000; position: relative; padding: 20px; display: flex; align-items: center; justify-content: center; }
+.lab-preview-side img { width: 100%; border-radius: 5px; transition: 0.4s ease-in-out; }
+.lab-live-status { position: absolute; bottom: 20px; left: 20px; font-size: 0.6rem; color: var(--gold); border: 1px solid var(--gold); padding: 4px 8px; letter-spacing: 2px; }
+
+.lab-options-side { padding: 40px; }
+.lab-section { margin-bottom: 25px; }
+.lab-section label { display: block; color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+/* CHIPS */
+.custom-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { padding: 8px 15px; border: 1px solid var(--border); color: #888; font-size: 0.8rem; cursor: pointer; transition: 0.3s; }
+.chip.active { border-color: var(--gold); color: var(--gold); background: rgba(212,175,55,0.1); }
+
+/* TOOLTIP (Uzvičnik) */
+.tooltip-trigger { margin-left: 5px; cursor: help; position: relative; color: #555; }
+.tooltip-img { visibility: hidden; position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%); width: 150px; background: #111; border: 1px solid var(--gold); padding: 5px; z-index: 1000; opacity: 0; transition: 0.3s; text-align: center; }
+.tooltip-img img { width: 100%; margin-bottom: 5px; }
+.tooltip-trigger:hover .tooltip-img { visibility: visible; opacity: 1; }
+
+textarea { width: 100%; background: #111; border: 1px solid var(--border); color: #fff; padding: 12px; margin-top: 10px; resize: none; font-family: inherit; }
+.lab-footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.lab-price { font-size: 1.4rem; font-weight: 700; color: var(--gold); }
+.btn-gold-lab { background: var(--gold); color: #000; border: none; padding: 15px 25px; font-weight: 700; cursor: pointer; }
+
+/* STANDARD MODAL FIXES */
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 40px; }
+@media (max-width: 768px) { .modal-grid { grid-template-columns: 1fr; } }
+.modal-img img { width: 100%; height: auto; border-radius: 5px; }
+.final-price { font-size: 1.5rem; color: var(--gold); margin: 20px 0; font-weight: 700; }
+/* Efekat promene cene */
+#lab-total {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+/* Ovu klasu ćemo dodati na trenutak preko JS-a ako želiš još jači efekat */
+.price-bump {
+    transform: scale(1.1);
+    color: #fff; /* Na trenutak pobeli radi kontrasta */
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternior | Katalog Večnih Ruža</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/katalog.css">
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <div class="logo">ETERN<span>IOR</span></div>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="katalog.html" class="active">Katalog</a></li>
+            <li><a href="index.html#onama">O nama</a></li>
+        </ul>
+        <div class="cart-trigger" onclick="toggleCart()">
+             <i class="fa-solid fa-heart"></i>
+             <span id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <div id="side-cart" class="side-cart">
+        <div class="cart-header">
+            <h3>Tvoj Izbor ❤️</h3>
+            <span class="close-btn" onclick="toggleCart()">×</span>
+        </div>
+        <div id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="total-box"><span>Ukupno:</span><span id="cart-total">0</span> RSD</div>
+            <button class="whatsapp-btn" onclick="sendWhatsApp()"><i class="fab fa-whatsapp"></i> PORUČI PREKO WHATSAPPA</button>
+        </div>
+    </div>
+
+    <section class="katalog-hero">
+        <div class="section-title">
+            <h1>Naša Kolekcija</h1>
+            <div class="gold-line"></div>
+            <p>Izaberi buket koji će trajati večno, baš kao i tvoja ljubav.</p>
+        </div>
+    </section>
+
+    <div class="filters-container">
+        <button class="filter-btn active" onclick="filterProducts('svi')">Svi</button>
+        <button class="filter-btn" onclick="filterProducts('basic')">Do 3.000 RSD</button>
+        <button class="filter-btn" onclick="filterProducts('premium')">Premium</button>
+    </div>
+
+    <section class="katalog-grid" id="katalogGrid">
+        
+        <div class="product-card custom-highlight" onclick="openLabModal()">
+            <div class="product-img">
+                <img src="slike/thumbnail-lab.png" alt="Dizajniraj sam">
+                <div class="badge">SAMO KOD NAS</div>
+            </div>
+            <div class="product-info">
+                <h3>Eternior Lab: Dizajniraj Sam</h3>
+                <p class="price">Od 3.000 RSD</p>
+                <button class="add-to-cart-btn" style="background: var(--gold); color: black;">OTVORI KONFIGURATOR</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="premium" data-price="4500" onclick="openStandardModal('Bordo Elegance', 4500, 'slike/ruze1-rafaelo.jpeg', 'Premium kutija sa večnim ružama.', true)">
+            <div class="product-img">
+                <img src="slike/ruze1-rafaelo.jpeg" alt="Bordo Elegance">
+                <div class="badge">Bestseller</div>
+            </div>
+            <div class="product-info">
+                <h3>Bordo Elegance</h3>
+                <p class="price">4.500 RSD</p>
+                <button class="add-to-cart-btn">POGLEDAJ OPCIJE</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="basic" data-price="2500" onclick="openStandardModal('Midnight Rose', 2500, 'slike/ruze-box-crvene.jpeg', 'Elegantna kutija sa crvenim ružama.', false)">
+            <div class="product-img">
+                <img src="slike/ruze-box-crvene.jpeg" alt="Midnight Rose">
+            </div>
+            <div class="product-info">
+                <h3>Midnight Rose</h3>
+                <p class="price">2.500 RSD</p>
+                <button class="add-to-cart-btn">DODAJ U KORPU</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="premium" data-price="5200" onclick="openStandardModal('Golden Satin Box', 5200, 'slike/ruze-box-plavo-sive.jpeg', 'Premium satensko pakovanje.', false)">
+            <div class="product-img">
+                <img src="slike/ruze-box-plavo-sive.jpeg" alt="Golden Satin Box">
+            </div>
+            <div class="product-info">
+                <h3>Golden Satin Box</h3>
+                <p class="price">5.200 RSD</p>
+                <button class="add-to-cart-btn">DODAJ U KORPU</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="basic" data-price="1800" onclick="openStandardModal('Mini Love Gift', 1800, 'slike/ruze3-koverta-roze.jpeg', 'Mali znak pažnje.', false)">
+            <div class="product-img">
+                <img src="slike/ruze3-koverta-roze.jpeg" alt="Mini Love Gift">
+            </div>
+            <div class="product-info">
+                <h3>Mini Love Gift</h3>
+                <p class="price">1.800 RSD</p>
+                <button class="add-to-cart-btn">DODAJ U KORPU</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="lab-modal" class="modal">
+        <div class="modal-content lab-style">
+            <span class="close-modal" onclick="closeLabModal()">&times;</span>
+            <div class="lab-grid-layout">
+                <div class="lab-preview-side">
+                    <img id="lab-main-img" src="slike/base-red.jpeg" alt="Preview">
+                    <div class="lab-live-status">UŽIVO PREGLED</div>
+                </div>
+                <div class="lab-options-side">
+                    <h2>Eternior Lab</h2>
+                    <p class="lab-subtitle">Samo kod nas: Kreiraj unikat koji niko drugi nema.</p>
+                    
+                    <div class="lab-section">
+                        <label>Boja večnih ruža:</label>
+                        <div class="custom-chips" id="lab-colors">
+                            <div class="chip active" onclick="updateLab('color', 'Crvena', 'slike/base-red.jpeg', 0)">Crvena</div>
+                            <div class="chip" onclick="updateLab('color', 'Bela', 'slike/base-white.jpeg', 0)">Bela</div>
+                            <div class="chip" onclick="updateLab('color', 'Zlatna', 'slike/base-gold.jpeg', 700)">Zlatna (+700)</div>
+                        </div>
+                    </div>
+
+                    <div class="lab-section">
+                    <label>Broj večnih ruža:</label>
+                        <div class="custom-chips" id="lab-rose-count">
+                            <div class="chip active" onclick="updateLab('count', 1, null, 0)">1 Ruža</div>
+                            <div class="chip" onclick="updateLab('count', 3, null, 400)">3 Ruže (+400)</div>
+                            <div class="chip" onclick="updateLab('count', 7, null, 1200)">7 Ruža (+1200)</div>
+                            <div class="chip" onclick="updateLab('count', 9, null, 1600)">9 Ruža (+1600)</div>
+                        </div>
+                    </div>
+
+                    <div class="lab-section">
+                        <label>Dodaj slatkiše (60 RSD/kom) 
+                            <i class="fas fa-info-circle tooltip-trigger">
+                                <span class="tooltip-img"><img src="slike/slatkisi-preview.jpg"><br>Ferrero & Rafaelo mix</span>
+                            </i>
+                        </label>
+                        <div class="custom-chips" id="lab-sweets">
+                            <div class="chip active" onclick="updateLab('sweets', 0, null, 0)">Bez</div>
+                            <div class="chip" onclick="updateLab('sweets', 3, null, 180)">3 kom</div>
+                            <div class="chip" onclick="updateLab('sweets', 6, null, 360)">6 kom</div>
+                            <div class="chip" onclick="updateLab('sweets', 9, null, 540)">9 kom</div>
+                        </div>
+                    </div>
+
+                    <div class="lab-section">
+                        <label>Personalizovana poruka (Maks 100 karakt.):</label>
+                        <textarea id="lab-note" maxlength="100" placeholder="Šta želiš da piše na pismu?"></textarea>
+                    </div>
+
+                    <div class="lab-footer">
+                        <div class="lab-price">Ukupno: <span id="lab-total">3.000</span> RSD</div>
+                        <button class="btn-gold-lab" onclick="addLabToCart()">DODAJ MOJU KREACIJU</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="standard-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeStandardModal()">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-img">
+                    <img id="std-image" src="" alt="">
+                </div>
+                <div class="modal-details">
+                    <h2 id="std-title">Naziv</h2>
+                    <p id="std-desc"></p>
+                    
+                    <div id="std-sweet-option" style="display:none;">
+                        <label>Izaberi slatkiš u box-u:</label>
+                        <select id="std-sweet-type">
+                            <option value="Ferrero">Ferrero Rocher</option>
+                            <option value="Rafaelo">Rafaelo</option>
+                        </select>
+                    </div>
+
+                    <label>Broj kutija (maks 5):</label>
+                    <input type="number" id="std-qty" min="1" max="5" value="1">
+
+                    <div class="final-price">Ukupno: <span id="std-total-price">0</span> RSD</div>
+                    <button class="btn-gold" onclick="addStandardToCart()">DODAJ U KORPU</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">ETERN<span>IOR</span></div>
+                <p>Poklonite emociju koja ne bledi. Ručno rađeni luksuzni aranžmani večnih ruža za najvažnije trenutke.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Pere Radovanovića 42, Bor</p>
+                <p><i class="fas fa-phone"></i> +381 61 163 3267</p>
+                <p><i class="fas fa-envelope"></i> eternior@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Informacije</h4>
+                <ul>
+                    <li><a href="rights/politika-privatnosti.html">Politika privatnosti</a></li>
+                    <li><a href="rights/uslovi-koriscenja.html">Uslovi korišćenja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Više</h4>
+                <ul>
+                    <li><a href="katalog.html">Katalog proizvoda</a></li>
+                    <li><a href="#">Dostava i povraćaj</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <div class="bottom-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <p>© 2026 Eternior. Sva prava zadržana.</p>
+                <p>Designed with ❤️ for Alexandra | Developed by <a href="https://arsadevelopment.onrender.com" target="_blank" class="dev-link" rel="noopener">Arsić Development</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Osnovna logika za filtriranje
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            const btns = document.querySelectorAll('.filter-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            products.forEach(product => {
+                const cat = product.getAttribute('data-category');
+                if (category === 'svi' || cat === category || product.classList.contains('custom-highlight')) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

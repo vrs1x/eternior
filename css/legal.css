@@ -1,0 +1,71 @@
+/* ETERNIOR - Legal Styles
+   Shared by Privacy Policy & Terms of Use
+*/
+
+:root {
+    --gold: #d4af37;
+    --deep-black: #050505;
+    --white: #ffffff;
+    --grey: #888888;
+}
+
+body {
+    background: var(--deep-black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+.legal-container {
+    max-width: 900px;
+    margin: 120px auto 80px;
+    padding: 0 5%;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h2 {
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--gold);
+    padding-left: 15px;
+}
+
+p, li {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 40px;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 1.8rem; }
+    .legal-container { margin-top: 100px; }
+}

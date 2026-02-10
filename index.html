@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternior | Luksuzne Ruže</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <div class="logo">ETERN<span>IOR</span></div>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" onclick="toggleMenu()">Početna</a></li>
+            <li><a href="katalog.html" onclick="toggleMenu()">Katalog</a></li>
+            <li><a href="#onama" onclick="toggleMenu()">O nama</a></li>
+        </ul>
+        <div class="cart-trigger" onclick="toggleCart()">
+            <i class="fa-solid fa-heart"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <div id="side-cart" class="side-cart">
+        <div class="cart-header">
+            <h3>Tvoj Izbor ❤️</h3>
+            <span class="close-btn" onclick="toggleCart()">×</span>
+        </div>
+        <div id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="total-box"><span>Ukupno:</span><span id="cart-total">0</span> RSD</div>
+            <button class="whatsapp-btn" onclick="sendWhatsApp()"><i class="fab fa-whatsapp"></i> PORUČI</button>
+        </div>
+    </div>
+
+    <header class="hero-valentine">
+        <div class="hero-content">
+            <span class="top-tag">Specijalna Valentine's Ponuda</span>
+            <h1>Ljubav koja <br><span>Nikada ne vene</span></h1>
+            <a href="katalog.html" class="btn-gold">KUPI POKLON</a>
+        </div>
+    </header>
+
+    <section class="trending-section">
+    <div class="section-title">
+        <h2><span style="color: darkgoldenrod;">Kreiraj</span> ili <span style="color: darkgoldenrod;">Izaberi</span> Najprodavanije Aranžmae</h2>
+        <div class="gold-line"></div>
+    </div>
+    
+    <div class="trending-grid">
+        <div class="trending-card lab-highlight" onclick="window.location.href='katalog.html'" style="border: 1px solid var(--gold); background: linear-gradient(145deg, #0a0a0a, #151515);">
+            <div class="card-img">
+                <img src="slike/thumbnail-lab.png" alt="Eternior Lab Customizer">
+                <div class="lab-badge"><i class="fas fa-flask"></i> ETERNIOR LAB</div>
+            </div>
+            <div class="card-info" style="padding: 20px;">
+                <h3 style="color: var(--gold);">Dizajniraj svoj buket</h3>
+                <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">Izaberi broj ruža, boju satena i omiljene slatkiše.</p>
+                <span class="btn-minimal">ZAPOČNI KREIRANJE →</span>
+            </div>
+        </div>
+
+        <div class="trending-card" onclick="window.location.href='katalog.html'">
+            <div class="card-img">
+                <img src="slike/ruze-box-crvene.jpeg" alt="Red Passion Box">
+            </div>
+            <h3>Red Passion Box</h3>
+        </div>
+
+        <div class="trending-card" onclick="window.location.href='katalog.html'">
+            <div class="card-img">
+                <img src="slike/ruze1-rafaelo.jpeg" alt="Gold Eternity">
+            </div>
+            <h3>Gold Eternity</h3>
+        </div>
+</section>
+
+    <section id="onama">
+    <div class="about-grid">
+        <div class="about-img">
+            <img src="slike/alexandra-creative.jpg" alt="Alexandra - Eternior Creator">
+        </div>
+        <div class="about-text">
+            <h2>Umetnost satenske večnosti</h2>
+            <p>Iza brenda Eternior stoji <strong>Alexandra Jovanović</strong>, mlada kreativka koja je odlučila da prirodu ne kopira, već da je ponovo stvori svojim rukama.</p>
+            <p>Sa samo 18 godina, Alexandra od najfinijeg satena oblikuje ruže koje prkose vremenu. One ne rastu iz zemlje – one nastaju iz strasti, strpljenja i stotina pažljivo sklopljenih latica. Svaka ruža je unikat, stvorena da ostane savršena zauvek, bez straha da će ikada uvenuti.</p>
+            <p>Eternior je mesto gde se susreću elegancija i mašta. Od raskošnih satenskih aranžmana u luksuznim kutijama, do čuvenih <strong>Sweet Box</strong> kombinacija sa najfinijim slatkišima, Alexandra svaki poklon pretvara u ličnu poruku večnosti koju možete dodirnuti.</p>
+        </div>
+    </div>
+    </section>
+
+    <section class="motivation-quote">
+        <div class="quote-content">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>Oni kažu da cveće vene, mi smo tu da to poreknemo. Pokloni večnost onome koga voliš.</p>
+            <span>— Eternior Team</span>
+        </div>
+    </section>
+
+    <section class="faq-section">
+    <div class="section-title">
+        <h2>Česta pitanja</h2>
+        <div class="gold-line"></div>
+    </div>
+    <div class="faq-container">
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Od čega su napravljene Eternior ruže? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Eternior ruže su ručno izrađene od visokokvalitetnog satena. Svaka latica se posebno oblikuje i spaja kako bi se dobio izgled prirodne ruže, ali sa neograničenim rokom trajanja. One ne rastu iz zemlje – one su plod kreativnog rada naše Alexandre.</div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Koliko dugo traju satenski aranžmani? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Za razliku od prirodnog cveća koje vene, naše satenske ruže su zaista večne. Materijal je otporan, ne bledi i zadržava svoj luksuzni sjaj godinama, što ih čini savršenom uspomenom.</div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Koliko je vremena potrebno za izradu aranžmana? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">S obzirom na to da se svaki aranžman izrađuje ručno sa maksimalnom pažnjom, potrebno je od 1 do 2 radna dana za kreiranje vašeg poklona. Vreme izrade može varirati u zavisnosti od trenutnog broja porudžbina.</div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Kada mogu očekivati svoj paket? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Okvirno vreme dostave na vašu adresu je od 3 do 7 radnih dana od trenutka poručivanja (vreme izrade + vreme kurirske službe).</div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Gde sve šaljete proizvode? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Eternior je online prodavnica koja pokriva celu teritoriju Srbije. Vaš paket stiže bezbedno upakovan bez obzira u kom se gradu nalazite.</div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Da li je moguće lično preuzimanje? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Da! Ukoliko se nalazite u Boru, Zaječaru ili Majdanpeku, možete lično preuzeti svoj aranžman uz prethodni dogovor putem poruke.</div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Koliko košta dostava? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Dostava se vrši proverenom brzom poštom i fiksna cena poštarine za sve aranžmane iznosi 500 dinara.</div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Kako se održavaju satenske ruže? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Održavanje je minimalno. Potrebno je samo povremeno ukloniti prašinu (najbolje fenom na hladnom vazduhu sa udaljenosti) i izbegavati direktno izlaganje tečnostima.</div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Šta podrazumeva Sweet Box opcija? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Sweet Box je specijalna ponuda gde uz ručno rađene satenske ruže kombinujemo najfinije slatkiše (Ferrero Rocher, Rafaelo itd.) u luksuznom pakovanju, kreirajući kompletan poklon set.</div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Imam specifičnu želju, kako da vas kontaktiram? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Uvek smo otvoreni za vaše ideje i custom porudžbine! Možete nam pisati u DM na Instagramu, TikToku ili nas kontaktirati putem WhatsApp-a. Tu smo da svaku vašu zamisao pretvorimo u satensko remek-delo.</div>
+        </div>
+
+    </div>
+</section>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">ETERN<span>IOR</span></div>
+                <p>Poklonite emociju koja ne bledi. Ručno rađeni luksuzni aranžmani večnih ruža za najvažnije trenutke.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Pere Radovanovića 42, Bor</p>
+                <p><i class="fas fa-phone"></i> +381 61 163 3267</p>
+                <p><i class="fas fa-envelope"></i> eternior@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Informacije</h4>
+                <ul>
+                    <li><a href="rights/politika-privatnosti.html">Politika privatnosti</a></li>
+                    <li><a href="rights/uslovi-koriscenja.html">Uslovi korišćenja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Više</h4>
+                <ul>
+                    <li><a href="katalog.html">Katalog proizvoda</a></li>
+                    <li><a href="#">Dostava i povraćaj</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <div class="bottom-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <p>© 2026 Eternior. Sva prava zadržana.</p>
+                <p>Designed with ❤️ for Alexandra | Developed by <a href="https://arsadevelopment.onrender.com" target="_blank" class="dev-link" rel="noopener">Arsić Development</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
