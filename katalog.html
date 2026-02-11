@@ -12,7 +12,7 @@
 <body>
 
     <nav class="sticky-nav">
-        <div class="logo">ETERN<span>IOR</span></div>
+        <div class="logo">ETER<span>NIOR</span></div>
         <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Početna</a></li>
@@ -20,8 +20,8 @@
             <li><a href="index.html#onama">O nama</a></li>
         </ul>
         <div class="cart-trigger" onclick="toggleCart()">
-             <i class="fa-solid fa-heart"></i>
-             <span id="cart-count">0</span>
+            <i class="fa-solid fa-heart"></i>
+            <span id="cart-count">0</span>
         </div>
     </nav>
 
@@ -60,19 +60,19 @@
             </div>
             <div class="product-info">
                 <h3>Eternior Lab: Dizajniraj Sam</h3>
-                <p class="price">Od 3.000 RSD</p>
+                <p class="price">Od 2.000 RSD</p>
                 <button class="add-to-cart-btn" style="background: var(--gold); color: black;">OTVORI KONFIGURATOR</button>
             </div>
         </div>
 
-        <div class="product-card" data-category="premium" data-price="4500" onclick="openStandardModal('Bordo Elegance', 4500, 'slike/ruze1-rafaelo.jpeg', 'Premium kutija sa večnim ružama.', true)">
+        <div class="product-card" data-category="premium" data-price="4500" onclick="openStandardModal('Sweet Box', 4500, 'slike/ruze1-rafaelo.jpeg', 'Premium kutija sa večnim ružama. Sweet Box special.', true)">
             <div class="product-img">
-                <img src="slike/ruze1-rafaelo.jpeg" alt="Bordo Elegance">
+                <img src="slike/ruze1-rafaelo.jpeg" alt="Sweet Box">
                 <div class="badge">Bestseller</div>
             </div>
             <div class="product-info">
-                <h3>Bordo Elegance</h3>
-                <p class="price">4.500 RSD</p>
+                <h3>Sweet Box</h3>
+                <p class="price">2.800 RSD</p>
                 <button class="add-to-cart-btn">POGLEDAJ OPCIJE</button>
             </div>
         </div>
@@ -93,7 +93,7 @@
                 <img src="slike/ruze-box-plavo-sive.jpeg" alt="Golden Satin Box">
             </div>
             <div class="product-info">
-                <h3>Golden Satin Box</h3>
+                <h3>Blue Grey Elegance</h3>
                 <p class="price">5.200 RSD</p>
                 <button class="add-to-cart-btn">DODAJ U KORPU</button>
             </div>
@@ -104,7 +104,7 @@
                 <img src="slike/ruze3-koverta-roze.jpeg" alt="Mini Love Gift">
             </div>
             <div class="product-info">
-                <h3>Mini Love Gift</h3>
+                <h3>Letter Love Gift</h3>
                 <p class="price">1.800 RSD</p>
                 <button class="add-to-cart-btn">DODAJ U KORPU</button>
             </div>
@@ -128,7 +128,10 @@
                         <div class="custom-chips" id="lab-colors">
                             <div class="chip active" onclick="updateLab('color', 'Crvena', 'slike/base-red.jpeg', 0)">Crvena</div>
                             <div class="chip" onclick="updateLab('color', 'Bela', 'slike/base-white.jpeg', 0)">Bela</div>
-                            <div class="chip" onclick="updateLab('color', 'Zlatna', 'slike/base-gold.jpeg', 700)">Zlatna (+700)</div>
+                            <div class="chip" onclick="updateLab('color', 'Plava', 'slike/base-white.jpeg', 0)">Plava</div>
+                            <div class="chip" onclick="updateLab('color', 'Roze', 'slike/base-white.jpeg', 0)">Roze</div>
+                            <div class="chip" onclick="updateLab('color', 'Ljubičasta', 'slike/base-white.jpeg', 0)">Ljubičasta</div>
+                            <div class="chip" onclick="updateLab('color', 'Zlatna', 'slike/base-gold.jpeg', 250)">Zlatna (+250)</div>
                         </div>
                     </div>
 
@@ -136,9 +139,9 @@
                     <label>Broj večnih ruža:</label>
                         <div class="custom-chips" id="lab-rose-count">
                             <div class="chip active" onclick="updateLab('count', 1, null, 0)">1 Ruža</div>
-                            <div class="chip" onclick="updateLab('count', 3, null, 400)">3 Ruže (+400)</div>
-                            <div class="chip" onclick="updateLab('count', 7, null, 1200)">7 Ruža (+1200)</div>
-                            <div class="chip" onclick="updateLab('count', 9, null, 1600)">9 Ruža (+1600)</div>
+                            <div class="chip" onclick="updateLab('count', 3, null, 600)">3 Ruže (+600)</div>
+                            <div class="chip" onclick="updateLab('count', 7, null, 1400)">7 Ruža (+1400)</div>
+                            <div class="chip" onclick="updateLab('count', 9, null, 1800)">9 Ruža (+1800)</div>
                         </div>
                     </div>
 
@@ -162,7 +165,7 @@
                     </div>
 
                     <div class="lab-footer">
-                        <div class="lab-price">Ukupno: <span id="lab-total">3.000</span> RSD</div>
+                        <div class="lab-price">Ukupno: <span id="lab-total">2.000</span> RSD</div>
                         <button class="btn-gold-lab" onclick="addLabToCart()">DODAJ MOJU KREACIJU</button>
                     </div>
                 </div>
@@ -184,8 +187,14 @@
                     <div id="std-sweet-option" style="display:none;">
                         <label>Izaberi slatkiš u box-u:</label>
                         <select id="std-sweet-type">
-                            <option value="Ferrero">Ferrero Rocher</option>
+                            <option value="Ferrero Rocher">Ferrero Rocher</option>
                             <option value="Rafaelo">Rafaelo</option>
+                            <option value="Kinder Bueno">Kinder Bueno</option>
+                            <option value="Bounty">Bounty</option>
+                            <option value="Twix">Twix</option>
+                            <option value="Snickers">Snickers</option>
+                            <option value="Kinder Čokoladica">Kinder Čokoladica</option>
+                            <option value="Mistery Sweet">Mistery Sweet</option>
                         </select>
                     </div>
 
@@ -202,12 +211,12 @@
     <footer class="main-footer">
         <div class="footer-grid">
             <div class="footer-col">
-                <div class="logo">ETERN<span>IOR</span></div>
+                <div class="logo">ETER<span>NIOR</span></div>
                 <p>Poklonite emociju koja ne bledi. Ručno rađeni luksuzni aranžmani večnih ruža za najvažnije trenutke.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/share/1FToqf81UX/?mibextid=wwXIfr" aria-label="Facebook" rel="noopener"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/eternior.rs?igsh=dnZ3d2JhNDF1dHYz" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@eternior?_r=1&_t=ZS-93pdbGrDkRd" aria-label="TikTok" rel="noopener"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -239,7 +248,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <script>
         // Osnovna logika za filtriranje
         function filterProducts(category) {
