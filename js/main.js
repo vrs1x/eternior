@@ -117,7 +117,7 @@ function updateLabUI() {
     const oldPrice = currentLabConfig.total;
     const priceDisplay = document.getElementById('lab-total');
     
-    currentLabConfig.total = 3000 + 
+    currentLabConfig.total = 2000 + 
                             currentLabConfig.extraColorPrice + 
                             currentLabConfig.extraRosePrice + 
                             currentLabConfig.sweetPrice;
@@ -169,10 +169,10 @@ function addStandardToCart() {
 function sendWhatsApp() {
     if (cart.length === 0) return alert("Korpa je prazna! ❤️");
     let msg = "🌹 *ETERNIOR - Porudžbina* 🌹\n\n";
-    cart.forEach(item => msg += `📍 *${item.name}*\n_${item.size}_\n💰 ${item.price} RSD\n\n`);
+    cart.forEach(item => msg += `📍 *${item.name}*\n${item.size}\n💰 ${item.price} RSD\n\n`);
     const total = cart.reduce((s, i) => s + i.price, 0);
     msg += `*UKUPNO:* ${total} RSD`;
-    window.open(`https://wa.me/381611633267?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/381611633267?text=${encodeURIComponent(msg)}`, 'blank');
 }
 
 // --- HEARTS ---
