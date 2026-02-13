@@ -8,15 +8,20 @@
     <meta name="keywords" content="satenske ruže, poklon kutije, sweet box, ručni rad, pokloni srbija, eternior">
     
     <style>
-        .sticky-nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: #fff; height: 70px; }
-        .logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 24px; }
-        body { margin: 0; padding-top: 70px; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+    /* Osnovni stilovi za prvi ekran - critical path */
+    body{background:#050505;color:#fff;margin:0;font-family:sans-serif}
+    .sticky-nav{position:fixed;top:0;width:100%;height:80px;background:rgba(5,5,5,.95);z-index:4000}
+    .hero-valentine{height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,#1a0505 0%,#050505 100%)}
+    .hero-content h1{font-size:2.5rem;text-align:center;line-height:1.1}
+    .btn-gold{padding:16px 40px;background:#d4af37;color:#000;text-decoration:none;font-weight:700}
     </style>
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" media="print" onload="this.media='all'">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    </noscript>
     
     <link rel="stylesheet" href="css/style.css">
     
@@ -85,7 +90,7 @@
     <div class="trending-grid">
         <div class="trending-card lab-highlight" onclick="window.location.href='katalog.html'" style="border: 1px solid var(--gold); background: linear-gradient(145deg, #0a0a0a, #151515);">
             <div class="card-img">
-                <img src="slike/thumbnail-lab.webp" alt="Eternior Lab Customizer" loading="lazy" decoding="async" width="400" height="400">
+                <img src="slike/thumbnail-lab.webp" alt="Eternior Lab Customizer" loading="lazy" decoding="async" width="400" height="400" fetchpriority="high">
                 <div class="lab-badge"><i class="fas fa-flask"></i> ETERNIOR LAB</div>
             </div>
             <div class="card-info" style="padding: 20px;">
@@ -240,4 +245,5 @@
     <script src="js/main.js" defer></script>
 </body>
 </html>
+
 
