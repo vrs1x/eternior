@@ -205,3 +205,12 @@ function animatePrice(elementId, start, end, duration) {
     };
     window.requestAnimationFrame(step);
 }
+
+// Optimizacija klika za mobilne uređaje
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('button, .cart-trigger, .menu-toggle');
+    buttons.forEach(btn => {
+        btn.style.touchAction = "manipulation";
+    });
+});
+
