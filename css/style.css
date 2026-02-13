@@ -1,7 +1,18 @@
 /* ETERNOR - Premium Valentine's Theme
-   Focus: Mobile-First + Desktop Luxury
-   Developer: Arsić Development
+Focus: Mobile-First + Desktop Luxury
+Developer: Arsić Development
 */
+html {
+    scroll-behavior: smooth;
+}
+img {
+    content-visibility: auto;
+}
+/* Sprečava skakanje sadržaja pre učitavanja fonta */
+.logo, h1, h2 {
+    display: block;
+    min-height: 1.2em;
+}
 
 :root {
     --gold: #d4af37;
@@ -441,4 +452,5 @@ body {
     color: var(--gold); 
     text-decoration: none; 
     font-weight: 600; 
+
 }
