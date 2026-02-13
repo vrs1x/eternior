@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eternior | Katalog Večnih Ruža</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/katalog.css">
@@ -55,7 +55,7 @@
         
         <div class="product-card custom-highlight" onclick="openLabModal()">
             <div class="product-img">
-                <img src="slike/thumbnail-lab.png" alt="Dizajniraj sam">
+                <img src="slike/thumbnail-lab.webp" alt="Dizajniraj sam" loading="lazy">
                 <div class="badge">SAMO KOD NAS</div>
             </div>
             <div class="product-info">
@@ -65,9 +65,9 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="premium" data-price="4500" onclick="openStandardModal('Sweet Box', 4500, 'slike/ruze1-rafaelo.jpeg', 'Premium kutija sa večnim ružama. Sweet Box special.', true)">
+        <div class="product-card" data-category="premium" data-price="4500" onclick="openStandardModal('Sweet Box', 4500, 'slike/ruze1-rafaelo.webp', 'Premium kutija sa večnim ružama. Sweet Box special.', true)">
             <div class="product-img">
-                <img src="slike/ruze1-rafaelo.jpeg" alt="Sweet Box">
+                <img src="slike/ruze1-rafaelo.webp" alt="Sweet Box" loading="lazy">
                 <div class="badge">Bestseller</div>
             </div>
             <div class="product-info">
@@ -77,9 +77,9 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="basic" data-price="2500" onclick="openStandardModal('Midnight Rose', 2500, 'slike/ruze-box-crvene.jpeg', 'Elegantna kutija sa crvenim ružama.', false)">
+        <div class="product-card" data-category="basic" data-price="2500" onclick="openStandardModal('Midnight Rose', 2500, 'slike/ruze-box-crvene.webp', 'Elegantna kutija sa crvenim ružama.', false)">
             <div class="product-img">
-                <img src="slike/ruze-box-crvene.jpeg" alt="Midnight Rose">
+                <img src="slike/ruze-box-crvene.webp" alt="Red Midnight Rose" loading="lazy">
             </div>
             <div class="product-info">
                 <h3>Midnight Rose</h3>
@@ -88,9 +88,9 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="premium" data-price="5200" onclick="openStandardModal('Golden Satin Box', 5200, 'slike/ruze-box-plavo-sive.jpeg', 'Premium satensko pakovanje.', false)">
+        <div class="product-card" data-category="premium" data-price="5200" onclick="openStandardModal('Golden Satin Box', 5200, 'slike/ruze-box-plavo-sive.webp', 'Premium satensko pakovanje.', false)">
             <div class="product-img">
-                <img src="slike/ruze-box-plavo-sive.jpeg" alt="Golden Satin Box">
+                <img src="slike/ruze-box-plavo-sive.webp" alt="Golden Satin Box" loading="lazy">
             </div>
             <div class="product-info">
                 <h3>Blue Grey Elegance</h3>
@@ -99,9 +99,9 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="basic" data-price="1800" onclick="openStandardModal('Mini Love Gift', 1800, 'slike/ruze3-koverta-roze.jpeg', 'Mali znak pažnje.', false)">
+        <div class="product-card" data-category="basic" data-price="1800" onclick="openStandardModal('Mini Love Gift', 1800, 'slike/ruze3-koverta-roze.webp', 'Mali znak pažnje.', false)">
             <div class="product-img">
-                <img src="slike/ruze3-koverta-roze.jpeg" alt="Mini Love Gift">
+                <img src="slike/ruze3-koverta-roze.webp" alt="Mini Love Gift" loading="lazy">
             </div>
             <div class="product-info">
                 <h3>Letter Love Gift</h3>
@@ -116,7 +116,7 @@
             <span class="close-modal" onclick="closeLabModal()">&times;</span>
             <div class="lab-grid-layout">
                 <div class="lab-preview-side">
-                    <img id="lab-main-img" src="slike/base-red.jpeg" alt="Preview">
+                    <img id="lab-main-img" src="slike/thumbnail-lab.webp" alt="Preview" loading="lazy">
                     <div class="lab-live-status">UŽIVO PREGLED</div>
                 </div>
                 <div class="lab-options-side">
@@ -148,7 +148,7 @@
                     <div class="lab-section">
                         <label>Dodaj slatkiše (60 RSD/kom) 
                             <i class="fas fa-info-circle tooltip-trigger">
-                                <span class="tooltip-img"><img src="slike/slatkisi-preview.jpg"><br>Ferrero & Rafaelo mix</span>
+                                <span class="tooltip-img"><img src="slike/slatkisi-preview.jpg" loading="lazy"><br>Ferrero & Rafaelo mix</span>
                             </i>
                         </label>
                         <div class="custom-chips" id="lab-sweets">
@@ -178,7 +178,7 @@
             <span class="close-modal" onclick="closeStandardModal()">&times;</span>
             <div class="modal-grid">
                 <div class="modal-img">
-                    <img id="std-image" src="" alt="">
+                    <img id="std-image" src="" alt="" loading="lazy">
                 </div>
                 <div class="modal-details">
                     <h2 id="std-title">Naziv</h2>
@@ -269,4 +269,5 @@
     </script>
 </body>
 </html>
+
 
